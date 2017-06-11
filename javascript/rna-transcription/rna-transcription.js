@@ -1,15 +1,14 @@
 var DnaTranscriber = function(){
-  this.toRna = function (){
-   var dna = {
-     'C'='G',
-     'G'='C',
-     'A'='U',
-     'T'='A'
-   };
-   arr = arr.split('')
-   
+  DnaTranscriber.prototype.toRna = function(dnaStrand) {
+    if ((/X/g).test(dnaStrand)) throw 'Invalid input'
 
+  	var dna = {
+  		C: "G",
+  		G: "C",
+  		A: "U",
+  		T: "A"
+  	}
+  	return dnaStrand.replace(/C|G|T|A/g, trans => dna[trans]);
   }
-}
-
+};
 module.exports = DnaTranscriber;
