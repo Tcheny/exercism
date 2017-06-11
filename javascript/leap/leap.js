@@ -5,7 +5,8 @@
 
 var  Year = function(input) {
   Year.prototype.isLeap = function() {
-  		return input % 400 == 0 ? true : input % 100 == 0 ? false : input % 4 == 0 ? true : false
+  		return input % 400 == 0 || input % 4 == 0 && input % 100 != 0
+
     }
 };
 module.exports = Year;
